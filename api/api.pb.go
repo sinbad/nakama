@@ -1267,7 +1267,7 @@ func (m *ListNotificationsRequest) GetCacheableCursor() string {
 	return ""
 }
 
-// List storage objects by user ID or collection or both.
+// List publicly readable storage objects in a given collection.
 type ListStorageObjectsRequest struct {
 	// ID of the user.
 	UserId string `protobuf:"bytes,1,opt,name=user_id,json=userId" json:"user_id,omitempty"`
@@ -2151,7 +2151,7 @@ type NakamaClient interface {
 	ListFriends(ctx context.Context, in *google_protobuf1.Empty, opts ...grpc.CallOption) (*Friends, error)
 	// Fetch list of notifications.
 	ListNotifications(ctx context.Context, in *ListNotificationsRequest, opts ...grpc.CallOption) (*NotificationList, error)
-	// List collections of storage objects.
+	// List publicly readable storage objects in a given collection.
 	ListStorageObjects(ctx context.Context, in *ListStorageObjectsRequest, opts ...grpc.CallOption) (*StorageObjectList, error)
 	// Get storage objects.
 	ReadStorageObjects(ctx context.Context, in *ReadStorageObjectsRequest, opts ...grpc.CallOption) (*StorageObjects, error)
@@ -2582,7 +2582,7 @@ type NakamaServer interface {
 	ListFriends(context.Context, *google_protobuf1.Empty) (*Friends, error)
 	// Fetch list of notifications.
 	ListNotifications(context.Context, *ListNotificationsRequest) (*NotificationList, error)
-	// List collections of storage objects.
+	// List publicly readable storage objects in a given collection.
 	ListStorageObjects(context.Context, *ListStorageObjectsRequest) (*StorageObjectList, error)
 	// Get storage objects.
 	ReadStorageObjects(context.Context, *ReadStorageObjectsRequest) (*StorageObjects, error)
