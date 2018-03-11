@@ -1454,7 +1454,7 @@
     "apiReadStorageObjectsRequest": {
       "type": "object",
       "properties": {
-        "objectIds": {
+        "object_ids": {
           "type": "array",
           "items": {
             "$ref": "#/definitions/apiReadStorageObjectId"
